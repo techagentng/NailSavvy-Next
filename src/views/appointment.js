@@ -10,17 +10,18 @@ import { gridSpacing } from 'store/constant';
 import Grid from '@mui/material/Grid';
 // ==============================|| SAMPLE PAGE ||============================== //
 
-const SamplePage = () => (
+const Appointment = () => (
   <>
     <Grid container spacing={gridSpacing} sx={{ mt: '90px' }}>
-      <Grid item xs={12} md={7} lg={6}>
+      {/* <Grid item xs={12} md={7} lg={6}>
         <UserActivity />
       </Grid>
       <Grid item xs={12} md={5} lg={6}>
         <LatestMessages />
-      </Grid>
+      </Grid> */}
+      <p>another page</p>
     </Grid>
   </>
 );
 
-export default SamplePage;
+export default Appointment;

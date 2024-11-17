@@ -1,7 +1,7 @@
-import Sample from 'views/sample-page';
+import Dashboard from 'views/dashboard';
 
 // ==============================|| PAGE ||============================== //
 
 export default function SamplePage() {
-  return <Sample />;
+  return <Dashboard />;
 }

@@ -21,21 +21,21 @@ const dashboard = {
       id: 'default',
       title: <FormattedMessage id="Home" />,
       type: 'item',
-      url: '/dashboard/default',
+      url: '/dashboard',
       icon: icons.IconDashboard,
-      breadcrumbs: true
+      breadcrumbs: false
     },
     {
-      id: 'analytics',
-      title: <FormattedMessage id="Wallet" />,
+      id: 'appointment',
+      title: <FormattedMessage id="Appointment" />,
       type: 'item',
-      url: '/dashboard/analytics',
+      url: '/appointment',
       icon: icons.IconDeviceAnalytics,
       breadcrumbs: true
     },
     {
       id: 'analytics',
-      title: <FormattedMessage id="Appointment" />,
+      title: <FormattedMessage id="Analytics" />,
       type: 'item',
       url: '/dashboard/analytics',
       icon: icons.IconDeviceAnalytics,
