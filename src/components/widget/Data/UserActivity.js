@@ -2,14 +2,15 @@
 
 import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import Badge from '@mui/material/Badge';
 import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import { Box, Typography, TextField, MenuItem, Stack } from '@mui/material';
+// import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
@@ -18,8 +19,8 @@ import { gridSpacing } from 'store/constant';
 import Modal from '@mui/material/Modal';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
+// import TextField from '@mui/material/TextField';
+// import MenuItem from '@mui/material/MenuItem';
 
 const UserActivity = () => {
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -138,13 +139,17 @@ const UserActivity = () => {
             </IconButton>
           </Box>
           <Box sx={{ mt: 2 }}>
-            <Typography variant="body2" gutterBottom>
-              I’m booking appointment for:
-            </Typography>
-            <TextField select fullWidth variant="outlined" value="Me" size="small" sx={{ mb: 2 }}>
-              <MenuItem value="Me">Me</MenuItem>
-              <MenuItem value="Someone else">Someone else</MenuItem>
-            </TextField>
+            <Stack spacing={2}>
+              {' '}
+              {/* Add spacing between the components */}
+              <Typography variant="body2" gutterBottom>
+                I’m booking appointment for:
+              </Typography>
+              <TextField select fullWidth variant="outlined" value="Me" size="small">
+                <MenuItem value="Me">Me</MenuItem>
+                <MenuItem value="Someone else">Someone else</MenuItem>
+              </TextField>
+            </Stack>
 
             <Typography variant="body2" gutterBottom>
               Select Service

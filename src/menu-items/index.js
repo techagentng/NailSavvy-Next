@@ -1,5 +1,5 @@
 // menu import
-import samplePage from './sample-page';
+import samplePage from './dashboard';
 import pages from './pages';
 
 // ==============================|| MENU ITEMS ||============================== //

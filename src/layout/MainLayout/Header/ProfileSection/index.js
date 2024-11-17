@@ -160,14 +160,14 @@ const ProfileSection = () => {
                     <Box sx={{ p: 2, pb: 0 }}>
                       <Stack>
                         <Stack direction="row" spacing={0.5} alignItems="center">
-                          <Typography variant="h4">Good Morning,</Typography>
-                          <Typography component="span" variant="h4" sx={{ fontWeight: 400 }}>
+                          <Typography variant="h4">Account</Typography>
+                          {/* <Typography component="span" variant="h4" sx={{ fontWeight: 400 }}>
                             {user?.name}
-                          </Typography>
+                          </Typography> */}
                         </Stack>
                         <Typography variant="subtitle2">Project Admin</Typography>
                       </Stack>
-                      <OutlinedInput
+                      {/* <OutlinedInput
                         sx={{ width: '100%', pr: 1, pl: 2, my: 2 }}
                         id="input-search-profile"
                         value={value}
@@ -182,15 +182,15 @@ const ProfileSection = () => {
                         inputProps={{
                           'aria-label': 'weight'
                         }}
-                      />
-                      <Divider />
+                      /> */}
+                      {/* <Divider /> */}
                     </Box>
                     <PerfectScrollbar style={{ height: '100%', maxHeight: 'calc(100vh - 250px)', overflowX: 'hidden' }}>
                       <Box sx={{ p: 2, pt: 0 }}>
-                        <UpgradePlanCard />
-                        <Divider />
+                        {/* <UpgradePlanCard /> */}
+                        {/* <Divider /> */}
                         <Card sx={{ bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.800' : 'primary.light', my: 2 }}>
-                          <CardContent>
+                          {/* <CardContent>
                             <Grid container spacing={3} direction="column">
                               <Grid item>
                                 <Grid item container alignItems="center" justifyContent="space-between">
@@ -224,9 +224,9 @@ const ProfileSection = () => {
                                 </Grid>
                               </Grid>
                             </Grid>
-                          </CardContent>
+                          </CardContent> */}
                         </Card>
-                        <Divider />
+                        {/* <Divider /> */}
                         <List
                           component="nav"
                           sx={{
@@ -235,7 +235,7 @@ const ProfileSection = () => {
                             minWidth: 300,
                             bgcolor: theme.palette.background.paper,
                             borderRadius: `${borderRadius}px`,
-                            '& .MuiListItemButton-root': { mt: 0.5 }
+                            '& .MuiListItemButton-root': { mt: 0 }
                           }}
                         >
                           <ListItemButton
