@@ -12,7 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Img from './../../../public/assets/images/Nails.png'
+import Img from '../../../public/assets/images/Nails.png';
 // Custom components
 import AuthWrapper1 from 'components/authentication/AuthWrapper1';
 import AuthCardWrapper from 'components/authentication/AuthCardWrapper';
@@ -22,39 +22,51 @@ import AuthFooter from 'components/ui-component/cards/AuthFooter';
 
 const Login = () => {
   const downMD = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const downSM = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   const router = useRouter();
 
   return (
     <Grid container sx={{ minHeight: '100vh' }}>
       {/* Left Section - Form */}
-      <Grid container item sx={{ width: { xs: '100%', md: '60%' }, height: '100vh', backgroundColor: 'blue' }}>
+      <Grid
+        container
+        item
+        sx={{
+          width: { xs: '100%', md: '60%' },
+          height: '100vh',
+          justifyContent: downMD ? 'center' : 'flex-start',
+          padding: { xs: 2, md: 3 },
+        }}
+      >
         <Grid
           item
           sx={{
-            flex: 1,
             position: 'relative',
             backgroundColor: '#fcfcfc',
             margin: 'auto',
-            padding: 2
+            padding: 2,
+            width: { xs: '90%', sm: '80%', md: '100%' },
           }}
         >
           {/* Top Right Icon */}
-          <IconButton
-            sx={{
-              position: 'absolute',
-              top: 16,
-              right: 16
-            }}
-          >
-            <MoreVertIcon />
-          </IconButton>
+          {!downSM && (
+            <IconButton
+              sx={{
+                position: 'absolute',
+                top: 16,
+                right: 16,
+              }}
+            >
+              <MoreVertIcon />
+            </IconButton>
+          )}
 
           {/* Back Arrow */}
           <IconButton
             sx={{
               position: 'absolute',
               top: 16,
-              left: 16
+              left: 16,
             }}
             onClick={() => router.back()}
           >
@@ -62,16 +74,22 @@ const Login = () => {
           </IconButton>
 
           {/* Login Form */}
-          <AuthCardWrapper sx={{ backgroundColor: '#fcfcfc', height: '100vh', width: '530px', margin: '0 auto' }}>
+          <AuthCardWrapper
+            sx={{
+              backgroundColor: '#fcfcfc',
+              width: { xs: '100%', md: '530px' },
+              margin: '0 auto',
+            }}
+          >
             <Grid container spacing={2}>
-              <Grid item sx={{ mb: 3 }}>
+              <Grid item sx={{ mb: 3, textAlign: 'center' }}>
                 <Link href="#" aria-label="theme logo">
                   <Logo />
                 </Link>
               </Grid>
               <Grid item xs={12}>
-                <Stack alignItems="left" justifyContent="left" spacing={1}>
-                  <Typography color="secondary.main" gutterBottom variant={downMD ? 'h3' : 'h2'}>
+                <Stack alignItems="flex-start" justifyContent="flex-start" spacing={1}>
+                  <Typography color="secondary.main" gutterBottom variant={downMD ? 'h4' : 'h2'}>
                     Login
                   </Typography>
                   <Typography variant="caption" fontSize="16px" textAlign="left">
@@ -85,7 +103,7 @@ const Login = () => {
               <Grid item xs={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} textAlign={downSM ? 'center' : 'left'}>
                 <Typography component={Link} href="/register" variant="subtitle1" sx={{ textDecoration: 'none' }}>
                   Don't have an account? Register
                 </Typography>
@@ -96,31 +114,35 @@ const Login = () => {
       </Grid>
 
       {/* Right Section - Image */}
-      <Grid
-        item
-        sx={{
-          width: { xs: '100%', md: '40%' },
-          height: '100vh',
-          display: 'flex', // Ensures proper centering of content
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
-        <img
-          src={Img} // Replace with your image path
-          alt="Background"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover' // Ensures the image covers the grid area
+      {!downMD && (
+        <Grid
+          item
+          sx={{
+            width: '40%',
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
-        />
-      </Grid>
+        >
+          <img
+            src={Img} // Replace with your image path
+            alt="Background"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover', // Ensures the image covers the grid area
+            }}
+          />
+        </Grid>
+      )}
 
       {/* Footer */}
-      <Grid item xs={12} sx={{ m: 3, mt: 1 }}>
-        <AuthFooter />
-      </Grid>
+      {downSM && (
+        <Grid item xs={12} sx={{ m: 3, mt: 1 }}>
+          <AuthFooter />
+        </Grid>
+      )}
     </Grid>
   );
 };

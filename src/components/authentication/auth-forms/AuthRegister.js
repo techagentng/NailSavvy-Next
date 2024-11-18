@@ -124,7 +124,7 @@ const JWTRegister = ({ ...others }) => {
       >
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
           <form noValidate onSubmit={handleSubmit} {...others}>
-            <Grid container spacing={{ xs: 0, sm: 2 }}>
+            {/* <Grid container spacing={{ xs: 0, sm: 2 }}>
               <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
@@ -151,7 +151,7 @@ const JWTRegister = ({ ...others }) => {
                   sx={{ ...theme.typography.customInput }}
                 />
               </Grid>
-            </Grid>
+            </Grid> */}
             <FormControl fullWidth error={Boolean(touched.email && errors.email)} sx={{ ...theme.typography.customInput }}>
               <InputLabel htmlFor="outlined-adornment-email-register">Telephone</InputLabel>
               <OutlinedInput
@@ -169,7 +169,40 @@ const JWTRegister = ({ ...others }) => {
                 </FormHelperText>
               )}
             </FormControl>
-
+            <FormControl fullWidth error={Boolean(touched.email && errors.email)} sx={{ ...theme.typography.customInput }}>
+              <InputLabel htmlFor="outlined-adornment-email-register">Telephone</InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-email-register"
+                type="telephone"
+                value={values.email}
+                name="telephone"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                inputProps={{}}
+              />
+              {touched.email && errors.email && (
+                <FormHelperText error id="standard-weight-helper-text--register">
+                  {errors.email}
+                </FormHelperText>
+              )}
+            </FormControl>
+            <FormControl fullWidth error={Boolean(touched.email && errors.email)} sx={{ ...theme.typography.customInput }}>
+              <InputLabel htmlFor="outlined-adornment-email-register">Telephone</InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-email-register"
+                type="telephone"
+                value={values.email}
+                name="telephone"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                inputProps={{}}
+              />
+              {touched.email && errors.email && (
+                <FormHelperText error id="standard-weight-helper-text--register">
+                  {errors.email}
+                </FormHelperText>
+              )}
+            </FormControl>
             <FormControl fullWidth error={Boolean(touched.password && errors.password)} sx={{ ...theme.typography.customInput }}>
               <InputLabel htmlFor="outlined-adornment-password-register">Password</InputLabel>
               <OutlinedInput

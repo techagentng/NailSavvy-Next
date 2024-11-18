@@ -1,83 +1,92 @@
 'use client';
 
 import Link from 'next/link';
-import Divider from '@mui/material/Divider';
+import { useRouter } from 'next/navigation';
+
+// Material-UI components
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import SvgIcon from '@mui/material/SvgIcon';
-import AuthCardWrapper from 'components/authentication/AuthCardWrapper';
-import AuthRegister from 'components/authentication/auth-forms/AuthRegister';
-import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Img from '../../../public/assets/images/Nails.png'; // Image path, update accordingly
+
+// Custom components
+import AuthCardWrapper from 'components/authentication/AuthCardWrapper';
+import Logo from 'components/ui-component/Logo';
+import AuthRegister from 'components/authentication/auth-forms/AuthRegister';
 
 const Register = () => {
   const downMD = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const router = useRouter();
 
   return (
     <Grid container sx={{ minHeight: '100vh' }}>
-      {/* Left Side Wrapper with Blue Background */}
-      <Grid container item sx={{ width: { xs: '100%', md: '60%' }, height: '100vh', backgroundColor: 'blue' }}>
+      {/* Left Section - Form */}
+      <Grid
+        container
+        item
+        sx={{
+          width: { xs: '100%', md: '60%' },
+          height: '100vh',
+          justifyContent: 'center',
+          padding: { xs: 2, md: 3 },
+        }}
+      >
         <Grid
           item
           sx={{
-            flex: 1,
             position: 'relative',
             backgroundColor: '#fcfcfc',
             margin: 'auto',
-            padding: 2
+            padding: 2,
+            width: '100%',
+            maxWidth: 530,
           }}
         >
-          {/* Sign In Icon and Text */}
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={1}
+          {/* Top Right Icon */}
+          <IconButton
             sx={{
               position: 'absolute',
-              top: 70,
+              top: 16,
               right: 16,
-              cursor: 'pointer'
             }}
           >
-            <SvgIcon fontSize="large" sx={{ color: '#bf7663' }}>
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-            </SvgIcon>
-            <Typography variant="body2" component={Link} href="/login" sx={{ textDecoration: 'none', color: 'black' }}>
-              Sign In
-            </Typography>
-          </Stack>
+            <MoreVertIcon />
+          </IconButton>
 
-          {/* Content */}
-          <AuthCardWrapper sx={{ backgroundColor: '#fcfcfc', height: '100vh', width: '530px', margin: '0 auto' }}>
+          {/* Back Arrow */}
+          <IconButton
+            sx={{
+              position: 'absolute',
+              top: 16,
+              left: 16,
+            }}
+            onClick={() => router.back()}
+          >
+            <ArrowBackIcon />
+          </IconButton>
+
+          {/* Register Form */}
+          <AuthCardWrapper sx={{ backgroundColor: '#fcfcfc', margin: 0 }}>
             <Grid container spacing={2}>
               <Grid item sx={{ mb: 3 }}>
                 <Link href="#" aria-label="theme logo">
-                  {/* Logo can be added here */}
+                  <Logo />
                 </Link>
               </Grid>
               <Grid item xs={12}>
-                <Box
-                  sx={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '40px',
-                    height: '40px',
-                    backgroundColor: '#eef7f6',
-                    borderRadius: '8px',
-                    marginBottom: '16px'
-                  }}
-                >
-                  <ArrowBackIcon sx={{ fontSize: 30, color: '#af6d53' }} />
-                </Box>
-                <Typography color="secondary.main" gutterBottom variant={downMD ? 'h3' : 'h2'}>
-                  Create Account
-                </Typography>
-                <Typography variant="caption" fontSize="16px">
-                  Unlock a world of luxury nail care. Sign up today for an elevated beauty experience!
-                </Typography>
+                <Stack alignItems="flex-start" justifyContent="flex-start" spacing={1}>
+                  <Typography color="secondary.main" gutterBottom variant={downMD ? 'h3' : 'h2'}>
+                    Create Account
+                  </Typography>
+                  <Typography variant="caption" fontSize="16px" textAlign="left">
+                    Unlock a world of luxury nail care. Sign up today for an elevated beauty experience!
+                  </Typography>
+                </Stack>
               </Grid>
               <Grid item xs={12}>
                 <AuthRegister />
@@ -87,7 +96,7 @@ const Register = () => {
               </Grid>
               <Grid item xs={12}>
                 <Typography component={Link} href="/login" variant="subtitle1" sx={{ textDecoration: 'none' }}>
-                  Already have an account?
+                  Already have an account? Sign In
                 </Typography>
               </Grid>
             </Grid>
@@ -95,26 +104,29 @@ const Register = () => {
         </Grid>
       </Grid>
 
-      {/* Right Side with Red Background */}
-      <Grid
-        item
-        sx={{
-          width: { xs: '100%', md: '40%' },
-          height: '100vh',
-          backgroundColor: 'red',
-          backgroundImage: 'url(/assets/i)', // Add your image path here
-          backgroundSize: 'cover', // Ensure the image covers the grid area
-          backgroundRepeat: 'no-repeat', // Avoid repeating the image
-          backgroundPosition: 'center', // Center the image
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
-        <Typography variant="h4" sx={{ color: 'white' }}>
-          Right Side Content
-        </Typography>
-      </Grid>
+      {/* Right Section - Image */}
+      {!downMD && (
+        <Grid
+          item
+          sx={{
+            width: { xs: '100%', md: '40%' },
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <img
+            src={Img} // Replace with your image path
+            alt="Background"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover', // Ensures the image covers the grid area
+            }}
+          />
+        </Grid>
+      )}
     </Grid>
   );
 };
