@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 // Material-UI components
 import Grid from '@mui/material/Grid';
@@ -12,9 +13,8 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Img from '../../../public/assets/images/Nails.png';
+
 // Custom components
-import AuthWrapper1 from 'components/authentication/AuthWrapper1';
 import AuthCardWrapper from 'components/authentication/AuthCardWrapper';
 import Logo from 'components/ui-component/Logo';
 import AuthLogin from 'components/authentication/auth-forms/AuthLogin';
@@ -118,21 +118,18 @@ const Login = () => {
         <Grid
           item
           sx={{
-            width: '40%',
+            width: { xs: '100%', md: '40%' },
             height: '100vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          <img
-            src={Img} // Replace with your image path
+          <Image
+            src="/assets/images/auth-img/Nails.png" // Replace with your image path
             alt="Background"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover', // Ensures the image covers the grid area
-            }}
+            layout="fill" // Makes the Image stretch to cover the container
+            objectFit="cover" // Maintains aspect ratio while covering the container
+            priority
           />
         </Grid>
       )}
