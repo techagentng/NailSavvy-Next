@@ -27,9 +27,11 @@ const pages = {
     },
     {
       id: 'settings',
+      url: '/settings',
       title: <FormattedMessage id="settings" />,
-      type: 'collapse',
-      icon: icons.IconBug
+      type: 'item',
+      icon: icons.IconBug,
+      breadcrumbs: false
     }
   ]
 };

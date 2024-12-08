@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 // Material-UI components
@@ -21,7 +20,6 @@ import AuthRegister from 'components/authentication/auth-forms/AuthRegister';
 
 const Register = () => {
   const downMD = useMediaQuery((theme) => theme.breakpoints.down('md'));
-  const router = useRouter();
 
   return (
     <Grid container sx={{ height: '100vh', overflow: 'hidden' }}>
@@ -32,49 +30,46 @@ const Register = () => {
         sx={{
           width: { xs: '100%', md: '60%' },
           height: '100vh',
-          overflowY: 'auto', // Enables vertical scrolling on the left section
-          padding: { xs: 2, md: 3 },
-          backgroundColor: '#fcfcfc'
+          overflowY: 'auto',
+          p: { xs: 2, md: 3 },
+          backgroundColor: '#fcfcfc',
+          position: 'relative',
         }}
       >
+        {/* Top Icons */}
+        <IconButton
+          sx={{
+            position: 'absolute',
+            top: 16,
+            left: 16,
+          }}
+        >
+          <ArrowBackIcon />
+        </IconButton>
+        <IconButton
+          sx={{
+            position: 'absolute',
+            top: 16,
+            right: 16,
+          }}
+        >
+          <MoreVertIcon />
+        </IconButton>
+
         <Grid
           item
           sx={{
-            position: 'relative',
-            margin: 'auto',
-            padding: 2,
+            m: 'auto',
+            p: 2,
             width: '100%',
-            maxWidth: 530
+            maxWidth: 530,
           }}
         >
-          {/* Top Right Icon */}
-          <IconButton
-            sx={{
-              position: 'absolute',
-              top: 16,
-              right: 16
-            }}
-          >
-            <MoreVertIcon />
-          </IconButton>
-
-          {/* Back Arrow */}
-          <IconButton
-            sx={{
-              position: 'absolute',
-              top: 16,
-              left: 16
-            }}
-            onClick={() => router.back()}
-          >
-            <ArrowBackIcon />
-          </IconButton>
-
           {/* Register Form */}
-          <AuthCardWrapper sx={{ margin: 0 }}>
+          <AuthCardWrapper>
             <Grid container spacing={2}>
               <Grid item sx={{ mb: 3 }}>
-                <Link href="#" aria-label="theme logo">
+                <Link href="/" aria-label="theme logo">
                   <Logo />
                 </Link>
               </Grid>
@@ -101,28 +96,31 @@ const Register = () => {
                 </Divider>
               </Grid>
 
+              {/* Google Sign-In */}
               <Grid item xs={12} sx={{ textAlign: 'center' }}>
                 <IconButton
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'flex-start', // Align content to the left inside the button
+                    justifyContent: 'flex-start',
                     border: '1px solid #ddd',
                     borderRadius: 2,
-                    padding: '8px 16px',
+                    p: '8px 16px',
                     width: '100%',
                     maxWidth: 300,
-                    margin: '0 auto',
-                    backgroundColor: '#fff', // Ensures a clean background for the button
+                    mx: 'auto',
+                    backgroundColor: '#fff',
                     '&:hover': {
-                      backgroundColor: '#f5f5f5' // Adds a hover effect
-                    }
+                      backgroundColor: '#f5f5f5',
+                    },
                   }}
                 >
-                  <img
-                    src="/assets/images/auth-img/google.png" // Replace with the correct Google icon path
+                  <Image
+                    src="/assets/images/auth-img/google.png"
                     alt="Google Icon"
-                    style={{ width: 20, height: 20, marginRight: 12 }}
+                    width={20}
+                    height={20}
+                    style={{ marginRight: 12 }}
                   />
                   <Typography variant="button" color="textPrimary" sx={{ flex: 1, textAlign: 'center' }}>
                     Sign in with Google
@@ -151,14 +149,14 @@ const Register = () => {
             width: { xs: '100%', md: '40%' },
             height: '100vh',
             position: 'relative',
-            overflow: 'hidden' // Prevents scrolling on the right side
+            overflow: 'hidden',
           }}
         >
           <Image
-            src="/assets/images/auth-img/Nails.png" // Replace with your image path
+            src="/assets/images/auth-img/Nails.png"
             alt="Background"
-            layout="fill" // Makes the Image stretch to cover the container
-            objectFit="cover" // Maintains aspect ratio while covering the container
+            fill
+            style={{ objectFit: 'cover' }}
             priority
           />
         </Grid>

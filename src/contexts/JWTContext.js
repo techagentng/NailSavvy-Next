@@ -14,7 +14,8 @@ import accountReducer from 'store/accountReducer';
 // project imports
 import Loader from 'components/ui-component/Loader';
 import axios from 'utils/axios';
-
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
 const chance = new Chance();
 
 // constant

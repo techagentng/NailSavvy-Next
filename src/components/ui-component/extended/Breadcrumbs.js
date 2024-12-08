@@ -75,7 +75,8 @@ const Breadcrumbs = ({
     color: 'grey.900',
     textDecoration: 'none',
     alignContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop:'50px'
   };
 
   const customLocation = pathname;

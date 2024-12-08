@@ -27,25 +27,25 @@ const dashboard = {
     },
     {
       id: 'appointment',
-      title: <FormattedMessage id="Appointment" />,
+      title: <FormattedMessage id="Appointent" />,
       type: 'item',
       url: '/appointment',
       icon: icons.IconDeviceAnalytics,
-      breadcrumbs: true
+      breadcrumbs: false
     },
     {
-      id: 'analytics',
-      title: <FormattedMessage id="Analytics" />,
+      id: 'membership',
+      title: <FormattedMessage id="Membership" />,
       type: 'item',
-      url: '/dashboard/analytics',
+      url: '/membership',
       icon: icons.IconDeviceAnalytics,
       breadcrumbs: true
     },
     {
-      id: 'analytics',
-      title: <FormattedMessage id="Membership" />,
+      id: 'wallet',
+      title: <FormattedMessage id="Wallet" />,
       type: 'item',
-      url: '/dashboard/analytics',
+      url: '/wallet',
       icon: icons.IconDeviceAnalytics,
       breadcrumbs: true
     }
