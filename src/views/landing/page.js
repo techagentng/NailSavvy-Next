@@ -51,7 +51,7 @@ const Appen = () => {
               letterSpacing: 1
             }}
           >
-            Nail<span style={{ fontStyle: 'italic', fontWeight: 800 }}>Savvy</span>
+            Nail<span style={{ fontWeight: 800 }}>Savvy</span>
           </Typography>
 
           {/* Desktop Menu */}
@@ -137,6 +137,7 @@ const Appen = () => {
           >
             Nail<span style={{ fontStyle: 'italic', fontWeight: 400 }}>Savvy</span>
           </Typography>
+
           <List>
             {navLinks.map((text, index) => (
               <ListItem key={index} sx={{ justifyContent: 'center' }}>
@@ -164,6 +165,13 @@ const Appen = () => {
           </List>
         </Box>
       </Drawer>
+      <Box
+        sx={{
+          height: '430px',
+          backgroundColor: 'red',
+          width: '100%'
+        }}
+      />
     </>
   );
 };
