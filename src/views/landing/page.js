@@ -172,6 +172,37 @@ const Appen = () => {
           width: '100%'
         }}
       />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'left',
+          gap: 2, // Spacing between Typography elements
+          padding: 2
+        }}
+      >
+        {/* Crossed out text */}
+        <Typography
+          variant="h2"
+          sx={{
+            textDecoration: 'line-through',
+            color: 'gray'
+          }}
+        >
+          This text is crossed out
+        </Typography>
+
+        {/* Italicized text */}
+        <Typography
+          variant="h1"
+          sx={{
+            fontStyle: 'italic',
+            color: 'black'
+          }}
+        >
+          This text is italicized
+        </Typography>
+      </Box>
     </>
   );
 };
