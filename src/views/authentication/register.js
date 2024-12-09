@@ -33,7 +33,7 @@ const Register = () => {
           overflowY: 'auto',
           p: { xs: 2, md: 3 },
           backgroundColor: '#fcfcfc',
-          position: 'relative',
+          position: 'relative'
         }}
       >
         {/* Top Icons */}
@@ -41,7 +41,7 @@ const Register = () => {
           sx={{
             position: 'absolute',
             top: 16,
-            left: 16,
+            left: 16
           }}
         >
           <ArrowBackIcon />
@@ -50,7 +50,7 @@ const Register = () => {
           sx={{
             position: 'absolute',
             top: 16,
-            right: 16,
+            right: 16
           }}
         >
           <MoreVertIcon />
@@ -62,7 +62,7 @@ const Register = () => {
             m: 'auto',
             p: 2,
             width: '100%',
-            maxWidth: 530,
+            maxWidth: 530
           }}
         >
           {/* Register Form */}
@@ -111,17 +111,11 @@ const Register = () => {
                     mx: 'auto',
                     backgroundColor: '#fff',
                     '&:hover': {
-                      backgroundColor: '#f5f5f5',
-                    },
+                      backgroundColor: '#f5f5f5'
+                    }
                   }}
                 >
-                  <Image
-                    src="/assets/images/auth-img/google.png"
-                    alt="Google Icon"
-                    width={20}
-                    height={20}
-                    style={{ marginRight: 12 }}
-                  />
+                  <Image src="/assets/images/auth-img/google.png" alt="Google Icon" width={20} height={20} style={{ marginRight: 12 }} />
                   <Typography variant="button" color="textPrimary" sx={{ flex: 1, textAlign: 'center' }}>
                     Sign in with Google
                   </Typography>
@@ -149,16 +143,10 @@ const Register = () => {
             width: { xs: '100%', md: '40%' },
             height: '100vh',
             position: 'relative',
-            overflow: 'hidden',
+            overflow: 'hidden'
           }}
         >
-          <Image
-            src="/assets/images/auth-img/Nails.png"
-            alt="Background"
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
-          />
+          <Image src="/assets/images/auth-img/Nails.png" alt="Background" fill style={{ objectFit: 'cover' }} priority />
         </Grid>
       )}
     </Grid>

@@ -1,7 +1,7 @@
 'use client';
 
 // material-ui
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Typography from '@mui/material/Typography';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,13 +16,40 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import Divider from '@mui/material/Divider';
 import { Box } from '@mui/material';
+import Slider from 'react-slick';
+import Image from 'next/image';
 
 const Appen = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: (currentSlide) => {
+      setCurrentSlide(currentSlide);
+    }
+  };
+
+  const handleNextSlide = () => {
+    sliderRef.current?.slickNext();
+  };
+
+  const handlePrevSlide = () => {
+    sliderRef.current?.slickPrev();
+  };
+
+  // const handleGoToSlide = (slideIndex) => {
+  //   sliderRef.current?.slickGoTo(slideIndex);
+  // };
 
   const navLinks = ['Services', 'Products', 'Lookbook', 'Bridal Bliss', 'Groups & Events', 'Rewards', 'About Us'];
 
@@ -165,13 +192,99 @@ const Appen = () => {
           </List>
         </Box>
       </Drawer>
-      <Box
-        sx={{
-          height: '430px',
-          backgroundColor: 'red',
-          width: '100%'
+
+      {/* Slider Section */}
+<Box
+  sx={{
+    height: '430px',
+    backgroundColor: 'grey',
+    width: '100%',
+    position: 'relative' // Ensure absolute positioning of buttons inside this box
+  }}
+>
+  {/* Slider Component */}
+  <Slider {...settings}>
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
+      }}
+    >
+      <Image
+        src="/assets/images/landing/a1.png"
+        alt="Slide 1"
+        layout="fill"
+        objectFit="cover"
+        style={{
+          position: 'absolute',
         }}
       />
+    </div>
+
+    <div>
+      <Image 
+        src="/assets/images/landing/a1.png" 
+        alt="Slide 1"  
+        width={100} height={530}
+      />
+    </div>
+    <div>
+      <Image 
+        src="/assets/images/landing/a1.png" 
+        alt="Slide 1"  
+        width={100} height={230}
+      />
+    </div>
+  </Slider>
+
+  {/* Slider Controls positioned at the bottom */}
+  <Box
+  sx={{
+    position: 'absolute',
+    bottom: 1,
+    left: 80, // Distance from the left side of the container
+    width: '400px', // Set the width for the larger container
+    height: '200px', // Set the height for the container
+    // backgroundColor: 'red', // Background color
+    display: 'flex',
+    flexDirection: 'column', // Stack the elements vertically (text on top, controls below)
+    justifyContent: 'space-between', // Space out the elements
+    alignItems: 'flex-start', // Left-align the content inside the container
+    padding: 2, // Optional, add some padding around the content
+  }}
+>
+  {/* Text Section - Positioned on top */}
+  <Typography
+    variant="h2"
+    sx={{
+      fontSize: '24px', // Adjust font size as needed
+      fontWeight: 700,
+      textAlign: 'left', // Left-align the text
+      color: 'white',
+      marginBottom: 2, // Add space below the text
+    }}
+  >
+    Step into Nailsavvy, where luxury meets tranquility. Enjoy serene and elegant space designed for your comfort.
+  </Typography>
+
+  {/* Arrow Controls */}
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: 'row', // Keep the arrows in a row
+      gap: 4, // Space between the arrows
+      justifyContent: 'flex-start', // Ensure the arrows are left-aligned
+    }}
+  >
+    <Image src="/assets/images/icons/Arrowl.png" width={50} height={50} onClick={handlePrevSlide} />
+    <Image src="/assets/images/icons/Arrowr.png" width={50} height={50} onClick={handleNextSlide} />
+  </Box>
+</Box>
+
+</Box>
+
+      {/* Text Section */}
       <Box
         sx={{
           display: 'flex',
