@@ -6,13 +6,13 @@ const TwoImageSection = () => {
   const theme = useTheme();
   const images = [
     {
-      src: '/image1.jpg',
+      src: '/assets/images/landing/new1.png',
       title: 'Our Lookbook',
       description: 'Explore our Lookbook to see some of our best work and a wide range of gel colors to choose from.',
       buttonText: 'Learn More'
     },
     {
-      src: '/image2.jpg',
+      src: '/assets/images/landing/new1.png',
       title: 'Bridal Services',
       description:
         'Make Nailsavvy part of your wedding day, and let us pamper you and your crew with the ultimate bridal beauty experience.',

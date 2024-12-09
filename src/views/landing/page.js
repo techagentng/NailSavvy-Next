@@ -21,7 +21,8 @@ import Image from 'next/image';
 import ThreeG from './threeg';
 import TwoG from './twophoto';
 import Reward from './rewardSetion';
-
+import Analytics from './analiticts';
+import Link from 'next/link';
 const Appen = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -134,9 +135,14 @@ const Appen = () => {
               <Badge badgeContent={2} color="error">
                 <ShoppingCartIcon />
               </Badge>
-              <Button variant="contained" color="secondary" sx={{ px: 3 }}>
-                Sign In
-              </Button>
+              <Link
+  href="/login"
+  sx={{ textDecoration: 'none' }} // Optional: Prevent underline styling
+>
+  <Button variant="contained" color="secondary" sx={{ px: 3 }}>
+    Sign In
+  </Button>
+</Link>;
             </Box>
           </Box>
 
@@ -294,7 +300,9 @@ const Appen = () => {
 </Box>
 <ThreeG/>
 <TwoG/>
+<Analytics/>
 <Reward/>
+
     </>
   );
 };

@@ -7,7 +7,7 @@ const RewardsSection = () => (
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: 4,
-      borderRadius: 2,
+      borderRadius: 0,
       background: 'linear-gradient(to right, #2c2c2c, #1a1a1a)', // Dark gradient background
       color: '#fff',
       textAlign: 'left',

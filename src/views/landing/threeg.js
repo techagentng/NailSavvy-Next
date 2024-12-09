@@ -5,12 +5,12 @@ import { useTheme } from '@mui/material/styles';
 const ResponsiveImageSection = () => {
   const theme = useTheme();
   const images = [
-    { src: '/image1.jpg', title: 'BAIB' },
-    { src: '/image2.jpg', title: 'GelX' },
-    { src: '/image3.jpg', title: 'Dual Form' },
-    { src: '/image4.jpg', title: 'Contact Gel' },
-    { src: '/image5.jpg', title: 'Poly Gel Overlay' },
-    { src: '/image6.jpg', title: 'Hard Gel Overlay' }
+    { src: '/assets/images/landing/i1.png', title: 'BAIB' },
+    { src: '/assets/images/landing/i2.png', title: 'GelX' },
+    { src: '/assets/images/landing/i3.png', title: 'Dual Form' },
+    { src: '/assets/images/landing/i4.png', title: 'Contact Gel' },
+    { src: '/assets/images/landing/i5.png', title: 'Poly Gel Overlay' },
+    { src: '/assets/images/landing/i6.png', title: 'Hard Gel Overlay' }
   ];
 
   return (
