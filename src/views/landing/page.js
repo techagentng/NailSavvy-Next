@@ -1,7 +1,7 @@
 'use client';
 
 // material-ui
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -18,6 +18,9 @@ import Divider from '@mui/material/Divider';
 import { Box } from '@mui/material';
 import Slider from 'react-slick';
 import Image from 'next/image';
+import ThreeG from './threeg';
+import TwoG from './twophoto';
+import Reward from './rewardSetion';
 
 const Appen = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,7 +30,13 @@ const Appen = () => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  useEffect(() => {
+    document.body.style.overflowX = "hidden";
+    return () => {
+      document.body.style.overflowX = "auto"; // Clean up
+    };
+  }, []);
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -194,12 +203,13 @@ const Appen = () => {
       </Drawer>
 
       {/* Slider Section */}
-<Box
+      <Box
   sx={{
-    height: '430px',
+    height: '400px', // Reduced height of the container
     backgroundColor: 'grey',
     width: '100%',
-    position: 'relative' // Ensure absolute positioning of buttons inside this box
+    position: 'relative', // Ensure absolute positioning of buttons inside this box
+    marginBottom:'700px',
   }}
 >
   {/* Slider Component */}
@@ -207,115 +217,84 @@ const Appen = () => {
     <div
       style={{
         width: '100%',
-        height: '100%',
+        height: '20%',
         overflow: 'hidden',
       }}
     >
       <Image
         src="/assets/images/landing/a1.png"
         alt="Slide 1"
-        layout="fill"
-        objectFit="cover"
-        style={{
-          position: 'absolute',
-        }}
+        layout="intrinsic"
+        width={600} // Set a width (e.g., 600px)
+        height={300} // Adjusted height (e.g., 300px)
+        style={{ width: '100%', height: 'auto' }}
       />
     </div>
 
     <div>
-      <Image 
-        src="/assets/images/landing/a1.png" 
-        alt="Slide 1"  
-        width={100} height={530}
+      <Image
+        src="/assets/images/landing/a1.png"
+        alt="Slide 1"
+        layout="intrinsic"
+        width={600} // Set a width (e.g., 600px)
+        height={300} // Adjusted height (e.g., 300px)
+        style={{ width: '100%', height: 'auto' }}
       />
     </div>
     <div>
-      <Image 
-        src="/assets/images/landing/a1.png" 
-        alt="Slide 1"  
-        width={100} height={230}
+      <Image
+        src="/assets/images/landing/a1.png"
+        alt="Slide 1"
+        layout="intrinsic"
+        width={600} // Set a width (e.g., 600px)
+        height={300} // Adjusted height (e.g., 300px)
+        style={{ width: '100%', height: 'auto' }}
       />
     </div>
   </Slider>
 
   {/* Slider Controls positioned at the bottom */}
-  <Box
-  sx={{
-    position: 'absolute',
-    bottom: 1,
-    left: 80, // Distance from the left side of the container
-    width: '400px', // Set the width for the larger container
-    height: '200px', // Set the height for the container
-    // backgroundColor: 'red', // Background color
-    display: 'flex',
-    flexDirection: 'column', // Stack the elements vertically (text on top, controls below)
-    justifyContent: 'space-between', // Space out the elements
-    alignItems: 'flex-start', // Left-align the content inside the container
-    padding: 2, // Optional, add some padding around the content
-  }}
->
-  {/* Text Section - Positioned on top */}
-  <Typography
-    variant="h2"
-    sx={{
-      fontSize: '24px', // Adjust font size as needed
-      fontWeight: 700,
-      textAlign: 'left', // Left-align the text
-      color: 'white',
-      marginBottom: 2, // Add space below the text
-    }}
-  >
-    Step into Nailsavvy, where luxury meets tranquility. Enjoy serene and elegant space designed for your comfort.
-  </Typography>
-
-  {/* Arrow Controls */}
-  <Box
-    sx={{
-      display: 'flex',
-      flexDirection: 'row', // Keep the arrows in a row
-      gap: 4, // Space between the arrows
-      justifyContent: 'flex-start', // Ensure the arrows are left-aligned
-    }}
-  >
-    <Image src="/assets/images/icons/Arrowl.png" width={50} height={50} onClick={handlePrevSlide} />
-    <Image src="/assets/images/icons/Arrowr.png" width={50} height={50} onClick={handleNextSlide} />
-  </Box>
-</Box>
 
 </Box>
+
+
 
       {/* Text Section */}
       <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'left',
-          gap: 2, // Spacing between Typography elements
-          padding: 2
-        }}
-      >
-        {/* Crossed out text */}
-        <Typography
-          variant="h2"
-          sx={{
-            textDecoration: 'line-through',
-            color: 'gray'
-          }}
-        >
-          This text is crossed out
-        </Typography>
+  sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'left',
+    gap: 2, // Spacing between Typography elements
+    padding: 2,
+    zIndex: 1, // Ensure content below slider is not hidden
+  }}
+>
+  {/* Crossed out text */}
+  <Typography
+    variant="h2"
+    sx={{
+      textDecoration: 'line-through',
+      color: 'gray',
+    }}
+  >
+    This text is crossed out
+  </Typography>
 
-        {/* Italicized text */}
-        <Typography
-          variant="h1"
-          sx={{
-            fontStyle: 'italic',
-            color: 'black'
-          }}
-        >
-          This text is italicized
-        </Typography>
-      </Box>
+  {/* Italicized text */}
+  <Typography
+    variant="h1"
+    sx={{
+      fontStyle: 'italic',
+      color: 'black',
+    }}
+  >
+    This text is italicized
+  </Typography>
+</Box>
+<ThreeG/>
+<TwoG/>
+<Reward/>
     </>
   );
 };
