@@ -1,4 +1,4 @@
-import { Box, Button, Container, Grid, Typography, styled, useTheme } from '@mui/material';
+import { Box, Button, Typography, styled, useTheme, Grid } from '@mui/material';
 import { IconCircleCheckFilled } from '@tabler/icons-react';
 import React from 'react';
 import Image from 'next/image';
@@ -15,6 +15,8 @@ const Lists = styled(Box)(({ theme }) => ({
 
 const Analytics = () => {
   const theme = useTheme();
+
+  // Styling for individual list items
   const listSX = {
     display: 'flex',
     alignItems: 'center',
@@ -25,6 +27,7 @@ const Analytics = () => {
     svg: { color: '#17a877' },
   };
 
+  // List item component to show check icon and text
   const ListItem = ({ children }) => (
     <Typography sx={listSX}>
       <IconCircleCheckFilled size={20} /> {children}
@@ -35,17 +38,23 @@ const Analytics = () => {
     <Box
       sx={{
         display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' }, // Stack on small screens, row on larger screens
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingX: '80px', // Added padding on both sides for consistency
-        paddingY: 4, // Vertical padding
+        paddingX: { xs: '16px', sm: '40px', md: '80px' }, // Adjust padding for mobile, tablet, and larger screens
+        paddingY: 4,
+        margin: '0 auto',
         maxWidth: 'calc(100% - 20px)', // Adjust max width to account for padding
-        margin: '0 auto', // Centers the component
-        flexWrap: 'wrap', // Ensures responsiveness for smaller screens
       }}
     >
       {/* Text Section */}
-      <Box sx={{ maxWidth: '60%', minWidth: '300px' }}>
+      <Box
+        sx={{
+          maxWidth: { xs: '100%', sm: '60%' }, // Take full width on small screens
+          minWidth: '300px',
+          marginBottom: { xs: theme.spacing(3), sm: 0 }, // Add margin on small screens
+        }}
+      >
         <Typography variant="h2" sx={{ marginBottom: theme.spacing(2) }}>
           Relax you are
           <br /> In safe hands
@@ -62,7 +71,7 @@ const Analytics = () => {
       </Box>
 
       {/* Image Section */}
-      <Box sx={{ maxWidth: '40%' }}>
+      <Box sx={{ maxWidth: { xs: '100%', sm: '40%' } }}>
         <Image
           src="/assets/images/landing/ali.png"
           alt="Dashboard"
