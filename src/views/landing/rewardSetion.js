@@ -1,57 +1,45 @@
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Button, Container, Grid, Typography, styled, useTheme } from '@mui/material';
+import React from 'react';
 
-const RewardsSection = () => (
-  <Box
-    sx={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: 4,
-      borderRadius: 0,
-      background: 'linear-gradient(to right, #2c2c2c, #1a1a1a)', // Dark gradient background
-      color: '#fff',
-      textAlign: 'left',
-      flexWrap: 'wrap' // Ensures responsiveness for smaller screens
-    }}
-  >
-    {/* Text Section */}
-    <Box sx={{ maxWidth: '60%', minWidth: '300px' }}>
-      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
-        My Rewards
-      </Typography>
-      <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-        At Nailsavvy, we reward our loyal clients with exciting perks, discounts, and VIP experiences. Whether youre referring friends,
-        earning points, or becoming a member, youll unlock more benefits with every visit. Start earning and enjoy exclusive rewards today!
-      </Typography>
-    </Box>
+const StayInTouchSection = () => {
+  const theme = useTheme();
 
-    {/* Button Section */}
+  return (
     <Box
       sx={{
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        flex: 1,
-        minWidth: '200px' // Adjust for responsiveness
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        paddingX: '80px', // Consistent padding with previous containers
+        paddingY: 4,
+        maxWidth: 'calc(100% - 160px)', // Adjusts for padding
+        margin: '0 auto', // Centers the container
+        backgroundColor: '#f7f2ec', // Background color
       }}
     >
+      <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: theme.spacing(2) }}>
+        Stay in Touch
+      </Typography>
+      <Typography variant="body1" sx={{ lineHeight: 1.7, marginBottom: theme.spacing(3) }}>
+        By subscribing to our newsletter, we’ll keep you up to date with all our services, offerings, discounts and promos.
+      </Typography>
       <Button
         variant="contained"
-        color="secondary"
+        color="primary"
         sx={{
-          backgroundColor: '#ff6b6b', // Matches "Learn More" button color
-          color: '#fff',
           textTransform: 'uppercase',
           paddingX: 4,
+          backgroundColor: '#17a877', // Example button color
           '&:hover': {
-            backgroundColor: '#e65555'
-          }
+            backgroundColor: '#138b67', // Hover effect
+          },
         }}
       >
-        Learn More
+        Subscribe
       </Button>
     </Box>
-  </Box>
-);
+  );
+};
 
-export default RewardsSection;
+export default StayInTouchSection;

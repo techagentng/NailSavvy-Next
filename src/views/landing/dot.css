@@ -1,0 +1,19 @@
+.slick-dots.custom-dots {
+  bottom: -30px; /* Adjust the position of the dots */
+}
+
+.slick-dots.custom-dots li {
+  margin: 0 5px; /* Space between dots */
+}
+
+.slick-dots.custom-dots li button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background 0.3s ease;
+}
+
+.slick-dots.custom-dots li.slick-active button {
+  background: #000; /* Highlight active dot */
+}

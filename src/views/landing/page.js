@@ -20,9 +20,13 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import ThreeG from './threeg';
 import TwoG from './twophoto';
-import Reward from './rewardSetion';
+// import Reward from './rewardSetion';
 import Analytics from './analiticts';
+import FormData1 from './form';
+import Footer from './footer';
+
 import Link from 'next/link';
+
 const Appen = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -32,12 +36,12 @@ const Appen = () => {
     setMobileOpen(!mobileOpen);
   };
   useEffect(() => {
-    document.body.style.overflowX = "hidden";
+    document.body.style.overflowX = 'hidden';
     return () => {
-      document.body.style.overflowX = "auto"; // Clean up
+      document.body.style.overflowX = 'auto'; // Clean up
     };
   }, []);
-  
+
   const settings = {
     dots: true,
     infinite: true,
@@ -136,13 +140,14 @@ const Appen = () => {
                 <ShoppingCartIcon />
               </Badge>
               <Link
-  href="/login"
-  sx={{ textDecoration: 'none' }} // Optional: Prevent underline styling
->
-  <Button variant="contained" color="secondary" sx={{ px: 3 }}>
-    Sign In
-  </Button>
-</Link>;
+                href="/login"
+                sx={{ textDecoration: 'none' }} // Optional: Prevent underline styling
+              >
+                <Button variant="contained" color="secondary" sx={{ px: 7 }}>
+                  Sign In
+                </Button>
+              </Link>
+              ;
             </Box>
           </Box>
 
@@ -210,99 +215,65 @@ const Appen = () => {
 
       {/* Slider Section */}
       <Box
-  sx={{
-    height: '400px', // Reduced height of the container
-    backgroundColor: 'grey',
-    width: '100%',
-    position: 'relative', // Ensure absolute positioning of buttons inside this box
-    marginBottom:'700px',
-  }}
->
-  {/* Slider Component */}
-  <Slider {...settings}>
-    <div
-      style={{
-        width: '100%',
-        height: '20%',
-        overflow: 'hidden',
-      }}
-    >
-      <Image
-        src="/assets/images/landing/a1.png"
-        alt="Slide 1"
-        layout="intrinsic"
-        width={600} // Set a width (e.g., 600px)
-        height={300} // Adjusted height (e.g., 300px)
-        style={{ width: '100%', height: 'auto' }}
-      />
-    </div>
+        sx={{
+          height: '488px', // Slider height
+          width: '100%',
+          position: 'relative',
+          backgroundColor: 'grey',
+          overflowX: 'hidden' // Prevent horizontal scroll
+        }}
+      >
+        {/* Slider Component */}
+        <Slider {...settings}>
+          <div
+            style={{
+              width: '100%',
+              height: '100%'
+            }}
+          >
+            <Image
+              src="/assets/images/landing/a11.png"
+              alt="Slide 1"
+              layout="intrinsic"
+              width={400} // Set a width (e.g., 600px)
+              height={116} // Adjusted height (e.g., 300px)
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
 
-    <div>
-      <Image
-        src="/assets/images/landing/a1.png"
-        alt="Slide 1"
-        layout="intrinsic"
-        width={600} // Set a width (e.g., 600px)
-        height={300} // Adjusted height (e.g., 300px)
-        style={{ width: '100%', height: 'auto' }}
-      />
-    </div>
-    <div>
-      <Image
-        src="/assets/images/landing/a1.png"
-        alt="Slide 1"
-        layout="intrinsic"
-        width={600} // Set a width (e.g., 600px)
-        height={300} // Adjusted height (e.g., 300px)
-        style={{ width: '100%', height: 'auto' }}
-      />
-    </div>
-  </Slider>
+          <div>
+            <Image
+              src="/assets/images/landing/a11.png"
+              alt="Slide 2"
+              layout="intrinsic"
+              width={400} // Set a width (e.g., 600px)
+              height={116} // Adjusted height (e.g., 300px)
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
 
-  {/* Slider Controls positioned at the bottom */}
+          <div>
+            <Image
+              src="/assets/images/landing/a11.png"
+              alt="Slide 3"
+              layout="intrinsic"
+              width={400} // Set a width (e.g., 600px)
+              height={116} // Adjusted height (e.g., 300px)
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
+        </Slider>
 
-</Box>
-
-
+        {/* Slider Controls positioned at the bottom */}
+      </Box>
 
       {/* Text Section */}
-      <Box
-  sx={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'left',
-    gap: 2, // Spacing between Typography elements
-    padding: 2,
-    zIndex: 1, // Ensure content below slider is not hidden
-  }}
->
-  {/* Crossed out text */}
-  <Typography
-    variant="h2"
-    sx={{
-      textDecoration: 'line-through',
-      color: 'gray',
-    }}
-  >
-    This text is crossed out
-  </Typography>
 
-  {/* Italicized text */}
-  <Typography
-    variant="h1"
-    sx={{
-      fontStyle: 'italic',
-      color: 'black',
-    }}
-  >
-    This text is italicized
-  </Typography>
-</Box>
-<ThreeG/>
-<TwoG/>
-<Analytics/>
-<Reward/>
-
+      <ThreeG /> 
+      <TwoG />
+      <Analytics />
+      <FormData1 />
+      <Footer /> 
     </>
   );
 };
