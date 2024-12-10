@@ -24,6 +24,7 @@ import TwoG from './twophoto';
 import Analytics from './analiticts';
 import FormData1 from './form';
 import Footer from './footer';
+import Kross from './crossed';
 
 import Link from 'next/link';
 
@@ -268,7 +269,7 @@ const Appen = () => {
       </Box>
 
       {/* Text Section */}
-
+      <Kross /> 
       <ThreeG /> 
       <TwoG />
       <Analytics />
