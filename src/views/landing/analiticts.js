@@ -9,8 +9,8 @@ const Lists = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   gap: theme.spacing(2),
   [theme.breakpoints.up('sm')]: {
-    flexDirection: 'row',
-  },
+    flexDirection: 'row'
+  }
 }));
 
 const Analytics = () => {
@@ -24,7 +24,7 @@ const Analytics = () => {
     padding: '10px 0',
     fontSize: '1rem',
     color: theme.palette.grey[900],
-    svg: { color: '#17a877' },
+    svg: { color: '#17a877' }
   };
 
   // List item component to show check icon and text
@@ -44,7 +44,7 @@ const Analytics = () => {
         paddingX: { xs: '16px', sm: '40px', md: '80px' }, // Adjust padding for mobile, tablet, and larger screens
         paddingY: 4,
         margin: '0 auto',
-        maxWidth: 'calc(100% - 20px)', // Adjust max width to account for padding
+        maxWidth: 'calc(100% - 20px)' // Adjust max width to account for padding
       }}
     >
       {/* Text Section */}
@@ -52,7 +52,7 @@ const Analytics = () => {
         sx={{
           maxWidth: { xs: '100%', sm: '60%' }, // Take full width on small screens
           minWidth: '300px',
-          marginBottom: { xs: theme.spacing(3), sm: 0 }, // Add margin on small screens
+          marginBottom: { xs: theme.spacing(3), sm: 0 } // Add margin on small screens
         }}
       >
         <Typography variant="h2" sx={{ marginBottom: theme.spacing(2) }}>

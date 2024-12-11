@@ -14,19 +14,12 @@ const ResponsiveImageSection = () => {
   ];
 
   return (
-    <Box sx={{ paddingX: '16px', paddingY: theme.spacing(4) }}>
+    <Box sx={{ paddingX: '36px', paddingY: theme.spacing(4) }}>
       <Grid container spacing={3}>
         {images.map((image) => (
           <Grid item xs={12} sm={6} md={4} key={image.src}>
             <Box sx={{ position: 'relative', borderRadius: '8px', overflow: 'hidden' }}>
-              <Image
-                src={image.src}
-                alt={image.title}
-                layout="responsive"
-                width={500}
-                height={300}
-                style={{ borderRadius: '8px' }}
-              />
+              <Image src={image.src} alt={image.title} layout="responsive" width={500} height={300} style={{ borderRadius: '8px' }} />
               <Typography
                 variant="h6"
                 sx={{

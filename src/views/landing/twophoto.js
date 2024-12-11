@@ -26,21 +26,14 @@ const TwoImageSection = () => {
         paddingX: '10px', // Added padding to both sides for consistency
         paddingY: 4, // Vertical padding
         margin: '0 auto', // Centers the content
-        maxWidth: '100%', // Ensures the content takes up full width
+        maxWidth: '100%' // Ensures the content takes up full width
       }}
     >
       <Grid container spacing={4}>
         {images.map((image) => (
           <Grid item xs={12} md={6} key={image.src}>
             <Box sx={{ position: 'relative', borderRadius: '16px', overflow: 'hidden' }}>
-              <Image 
-                src={image.src}
-                alt={image.title}
-                layout="responsive"
-                width={600}
-                height={400}
-                style={{ borderRadius: '8px' }} 
-              />
+              <Image src={image.src} alt={image.title} layout="responsive" width={600} height={400} style={{ borderRadius: '8px' }} />
             </Box>
             <Typography variant="h6" sx={{ marginTop: 2 }}>
               {image.title}

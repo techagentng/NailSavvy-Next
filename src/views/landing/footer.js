@@ -15,10 +15,10 @@ const Footer = () => (
       {/* First Column - Logo */}
       <Grid item xs={12} md={3}>
         <Image
-          src="/path-to-logo.png" // Replace with your actual logo path
+          src="/assets/images/landing/footerimg.png" // Replace with your actual logo path
           alt="Logo"
-          width={150}
-          height={50}
+          width={90}
+          height={100}
         />
       </Grid>
 
@@ -91,13 +91,13 @@ const Footer = () => (
       {/* Right Side - Menu Links */}
       <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'flex-end', gap: 3 }}>
         <Link href="#" sx={{ textDecoration: 'none', color: '#000' }}>
-          Link1
+          Privacy Policy
         </Link>
         <Link href="#" sx={{ textDecoration: 'none', color: '#000' }}>
-          Link2
+          Terms of use
         </Link>
         <Link href="#" sx={{ textDecoration: 'none', color: '#000' }}>
-          Link3
+          Cookie Policy
         </Link>
       </Grid>
     </Grid>

@@ -269,12 +269,12 @@ const Appen = () => {
       </Box>
 
       {/* Text Section */}
-      <Kross /> 
-      <ThreeG /> 
+      <Kross />
+      <ThreeG />
       <TwoG />
       <Analytics />
       <FormData1 />
-      <Footer /> 
+      <Footer />
     </>
   );
 };

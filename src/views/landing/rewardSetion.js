@@ -15,7 +15,7 @@ const StayInTouchSection = () => {
         paddingY: 4,
         maxWidth: 'calc(100% - 160px)', // Adjusts for padding
         margin: '0 auto', // Centers the container
-        backgroundColor: '#f7f2ec', // Background color
+        backgroundColor: '#f7f2ec' // Background color
       }}
     >
       <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: theme.spacing(2) }}>
@@ -32,8 +32,8 @@ const StayInTouchSection = () => {
           paddingX: 4,
           backgroundColor: '#17a877', // Example button color
           '&:hover': {
-            backgroundColor: '#138b67', // Hover effect
-          },
+            backgroundColor: '#138b67' // Hover effect
+          }
         }}
       >
         Subscribe
